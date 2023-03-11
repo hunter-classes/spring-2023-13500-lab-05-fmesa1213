@@ -117,5 +117,81 @@ int flag;
    return i;   
 }
 }
-  return 0;
+{
+int num1, num2;
+cout << "Calculate the number of primes in the given range:\n";
+cout << "Enter Number1:";
+cin >> num1;
+cout << "Enter Number2:";
+cin >> num2;
+  cout << "The count of prime numbers between " << num1 << " and " << num2 << " is " << countPrimes(num1, num2);
+}
+bool isDivisibleBy(int n, int d) 
+{
+return !(bool)(n % d);
+}
+
+bool isPrime(int n) 
+{
+for (int i = 2; i < n/2; ++i) 
+{
+if (n % i == 0) 
+{
+return false;
+}
+}
+return true;
+}
+
+int nextPrime(int n) 
+{
+int i = n;
+do {
+i++;
+} while (isPrime(i));
+return i;
+}
+int countPrimes(int num1, int num2) 
+{
+int count = 0;
+if (num2 < 2) 
+{
+return 0;
+}
+int temp = num1;
+if (temp == 2) 
+{
+count++;
+}
+if (temp % 2 == 0) 
+{
+temp++;
+}
+for (int i = temp; i <= num2; i = i + 2) 
+{
+  if (isPrime(i)) 
+  {
+  count++;
+  }
+}
+return count;
+}
+{
+int n;
+
+cout<<"Enter an integer: ";
+cin>>n;
+
+if(isTwin(n)){
+cout<<n<<" is a twin prime.";
+}
+else{
+cout<<n<<" is not a twin prime.";
+}
+
+}
+{
+int tPrime = nextTwinPrime(100);
+cout<<"The twin primes are: "<<tPrime<<" and "<<tPrime+2;
+
 }
