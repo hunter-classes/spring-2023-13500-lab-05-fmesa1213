@@ -11,6 +11,13 @@ If n is divisible by d, the function should return true, otherwise return false.
 using namespace std;
 
 bool isDivisibleBy(int n, int d){
+bool isPrime(int n);
+int nextPrime(int n);
+int countPrimes(int num1, int num2);
+bool isTwinPrime(int n);
+int nextTwinPrime(int n);
+int largestTwinPrime(int a, int b);
+
 
   if(d==0)return false;
 
@@ -28,6 +35,8 @@ int main(){
 
 int num;
 int div;
+int n;
+
 
 cout << "Enter the value of dividend: " << endl;
 cin >> num;
@@ -45,5 +54,22 @@ else
 {
   cout<<"NO";
 }
-return 0;
+
+
+int num;
+	cout<<"Enter a number: ";
+	cin>>n;
+	bool prime = isPrime(n);
+	if(prime == true)
+	{
+		cout<<"The number "<<n<<" is prime."<<endl;
+	}
+	else
+	{
+		cout<<"The number "<<n<<" is not prime."<<endl;
+	}
+  
+  
+  
+  
 }
